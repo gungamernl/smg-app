@@ -1,0 +1,48 @@
+﻿<Window x:Class="SMG_app.artiesten"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SMG_app"
+        mc:Ignorable="d"
+        Title="artiesten" Height="450" Width="800">
+    <Grid>
+        <Grid Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+
+            </Grid.ColumnDefinitions>
+            <DockPanel Grid.Column="0">
+                <TextBlock DockPanel.Dock="Top" TextAlignment="Center">artiest</TextBlock>
+                <ListBox x:Name="lb_artiesten" DisplayMemberPath="artiest_naam" SelectionChanged="Lb_artiesten_SelectionChanged"></ListBox>
+            </DockPanel>
+            <DockPanel Grid.Column="1">
+                <TextBlock DockPanel.Dock="Top" TextAlignment="Center">ongekoppelde nummers</TextBlock>
+                <ListBox x:Name="lb_ongekoppelde" DisplayMemberPath="nummer_naam"></ListBox>
+            </DockPanel>
+            <DockPanel Grid.Column="2">
+                <TextBlock DockPanel.Dock="Top" TextAlignment="Center"> gekoppelde nummers</TextBlock>
+                <ListBox x:Name="lb_gekoppeld" DisplayMemberPath="nummer_naam"></ListBox>
+            </DockPanel>
+            <StackPanel Grid.Column="3" Margin="10,0">
+                
+                <TextBox Height="25"  Margin="0,10" x:Name="tb_artiestnaam" ></TextBox>
+                <TextBox Height="25"  Margin="0,10" x:Name="tb_artiestfoto"></TextBox>
+                <TextBox Height="25"  Margin="0,10" x:Name="tb_infoartiest"></TextBox>
+                <TextBox Height="25"  Margin="0,10" x:Name="tb_artiestlink"></TextBox>
+                <Button Margin="0,10" Click="koppel_Click">koppel</Button>
+                <Button Margin="0,10" Click="ontkoppel_Click">ontkoppel</Button>
+                <Button Margin="0,10" Click="delete_click">verwijder</Button>
+                <Button Margin="0,10" Click="update_click">wijzigen</Button>
+                <Button Margin="0,1" Click="insert_click">toevoegen</Button>
+                <Button Margin="0,4" Click="terug_click">terug</Button>
+
+
+            </StackPanel>
+
+        </Grid>
+    </Grid>
+</Window>
